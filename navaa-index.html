@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#080914">
+<title>NAVAA — Polygon Web3</title>
+<meta name="description" content="Explore NAVAA on Polygon. Connect your wallet and view your on-chain token balance.">
+<style>
+:root{--bg:#080914;--panel:rgba(20,22,44,.78);--line:rgba(163,151,255,.2);--text:#f5f4ff;--muted:#a4a4c4;--violet:#9d7bff;--cyan:#69e6ff;--green:#8dffce}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(ellipse at 50% -15%,#30215d 0,transparent 42%),radial-gradient(circle at 90% 55%,rgba(38,83,130,.16),transparent 28%),var(--bg);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,sans-serif;min-height:100vh}a{color:inherit;text-decoration:none}.wrap{width:min(1120px,92%);margin:auto}.nav{height:78px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid rgba(255,255,255,.07)}.brand{display:flex;gap:11px;align-items:center;font-weight:900;letter-spacing:.18em}.mark{width:38px;height:38px;border-radius:13px;display:grid;place-items:center;background:linear-gradient(140deg,#bba4ff,#7251e8 55%,#59ddf5);color:#0b0b1a;font-size:20px;box-shadow:0 0 30px #8b68ff44}.navlinks{display:flex;align-items:center;gap:25px;color:var(--muted);font-size:14px}.btn{border:1px solid var(--line);border-radius:13px;padding:13px 17px;background:rgba(145,116,255,.12);color:var(--text);font-weight:750;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:8px;transition:.2s}.btn:hover{transform:translateY(-1px);border-color:#a795ff}.btn.primary{background:linear-gradient(110deg,#b39aff,#75e6ff);color:#0a0b19;border:0;box-shadow:0 8px 35px #8e70ff30}.hero{text-align:center;padding:86px 0 56px}.pill{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line);background:#a28aff0d;border-radius:99px;padding:8px 13px;color:#d4ccff;font-size:12px;letter-spacing:.12em;text-transform:uppercase}.dot{width:7px;height:7px;border-radius:50%;background:var(--green);box-shadow:0 0 12px var(--green)}h1{font-size:clamp(48px,9vw,92px);letter-spacing:-.065em;line-height:.98;margin:25px 0 18px;font-weight:900}.gradient{background:linear-gradient(100deg,#fff 10%,#b9a4ff 48%,#72e8ff 85%);-webkit-background-clip:text;background-clip:text;color:transparent}.sub{max-width:620px;margin:0 auto;color:var(--muted);line-height:1.75;font-size:16px}.actions{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:29px}.orb{width:min(250px,62vw);aspect-ratio:1;margin:42px auto 0;border-radius:50%;display:grid;place-items:center;position:relative;background:radial-gradient(circle at 35% 25%,#e5dbff,#9b7cff 18%,#3d2b89 45%,#11152f 69%,#090a17 72%);box-shadow:0 0 55px #8262ff42,inset -12px -18px 35px #050610}.orb:before,.orb:after{content:"";position:absolute;inset:-13px;border:1px solid #a28aff55;border-radius:50%;transform:rotateX(67deg) rotateZ(-22deg)}.orb:after{inset:-26px;border-color:#63e8ff30;transform:rotateX(70deg) rotateZ(35deg)}.orb span{font-size:86px;font-weight:950;color:#fff;text-shadow:0 0 25px #c7b5ff;letter-spacing:-.1em}.section{padding:35px 0 70px}.eyebrow{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--cyan);font-weight:800}.section h2{font-size:clamp(28px,5vw,42px);letter-spacing:-.04em;margin:10px 0 24px}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}.card{border:1px solid var(--line);background:linear-gradient(145deg,rgba(26,27,55,.86),rgba(13,15,31,.8));border-radius:21px;padding:23px;min-width:0;box-shadow:0 12px 45px #0002}.cardlabel{color:var(--muted);font-size:13px}.big{font-size:27px;font-weight:850;letter-spacing:-.04em;margin-top:11px;overflow-wrap:anywhere}.tiny{font-size:12px;color:var(--muted);line-height:1.65;margin-top:8px}.dashhead{display:flex;align-items:end;justify-content:space-between;gap:14px;margin-bottom:20px}.status{font-size:12px;color:var(--green);display:flex;align-items:center;gap:7px}.address{font-size:12px;color:#d6d2ff;overflow-wrap:anywhere;line-height:1.6}.rowbtn{display:flex;gap:8px;flex-wrap:wrap;margin-top:16px}.smallbtn{padding:9px 11px;font-size:12px;border-radius:10px}.notice{border:1px solid #9c7cff30;background:#9c7cff0b;padding:15px 17px;border-radius:14px;color:var(--muted);font-size:12px;line-height:1.7;margin-top:17px}.footer{border-top:1px solid rgba(255,255,255,.08);padding:25px 0 35px;color:var(--muted);font-size:12px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}.toast{margin-top:14px;color:var(--cyan);font-size:13px;min-height:20px}.hide{display:none!important}
+@media(max-width:700px){.nav{height:68px}.navlinks{gap:10px}.navlinks a{display:none}.hero{padding:62px 0 42px}.grid{grid-template-columns:1fr}.card{padding:20px}.dashhead{align-items:start;flex-direction:column}.big{font-size:25px}.orb{margin-top:34px}.sub{font-size:15px}.footer{flex-direction:column}}
+</style>
+</head>
+<body>
+<header class="wrap nav"><a class="brand" href="#"><span class="mark">N</span><span>NAVAA</span></a><nav class="navlinks"><a href="#dashboard">Dashboard</a><a href="#about">About</a><a href="https://polygonscan.com/address/0x82dba663278ADF0c398c1795a31760c7a76CA932" target="_blank" rel="noopener">Explorer ↗</a><button class="btn primary" id="connectTop">Connect wallet</button></nav></header>
+<main class="wrap">
+<section class="hero"><div class="pill"><span class="dot"></span> BUILT ON POLYGON</div><h1>Enter the <span class="gradient">NAVAA</span><br>universe.</h1><p class="sub">A new digital frontier. Explore the NAVAA token on Polygon, connect your wallet, and view your on-chain balance — all in one place.</p><div class="actions"><button class="btn primary" id="connectHero">↗ Connect wallet</button><a class="btn" href="https://polygonscan.com/address/0x82dba663278ADF0c398c1795a31760c7a76CA932" target="_blank" rel="noopener">View contract ↗</a></div><div class="orb" aria-label="NAVAA token emblem"><span>N</span></div></section>
+<section class="section" id="dashboard"><div class="dashhead"><div><div class="eyebrow">Your on-chain overview</div><h2>Token dashboard</h2></div><div class="status"><span class="dot"></span><span id="networkStatus">Wallet not connected</span></div></div>
+<div class="grid">
+<article class="card"><div class="cardlabel">NAVAA balance</div><div class="big" id="balance">— NAVAA</div><div class="tiny" id="balanceHint">Connect a wallet to read your balance from Polygon.</div></article>
+<article class="card"><div class="cardlabel">Network</div><div class="big" id="network">Polygon</div><div class="tiny">Polygon PoS Mainnet · Chain ID 137</div><div class="rowbtn"><button class="btn smallbtn" id="switchNet">Switch to Polygon</button></div></article>
+<article class="card"><div class="cardlabel">Token contract</div><div class="big">NAVAA</div><div class="tiny address" id="contractShort">0x82dba663278ADF0c398c1795a31760c7a76CA932</div><div class="rowbtn"><button class="btn smallbtn" id="copyContract">Copy address</button><a class="btn smallbtn" href="https://polygonscan.com/address/0x82dba663278ADF0c398c1795a31760c7a76CA932" target="_blank" rel="noopener">PolygonScan ↗</a></div></article>
+</div><div class="card" style="margin-top:15px"><div class="cardlabel">Connected wallet</div><div class="big" id="walletAddress" style="font-size:17px">Not connected</div><div class="rowbtn"><button class="btn smallbtn" id="refresh" disabled>Refresh balance</button><button class="btn smallbtn" id="disconnect">Clear display</button></div><div class="toast" id="message" role="status"></div></div>
+<div class="notice">Safety first: NAVAA will never ask for your seed phrase or private key. Connecting only reads your public address and token balance. This page does not initiate token transfers. Only approve wallet prompts you understand.</div>
+</section>
+<section class="section" id="about"><div class="eyebrow">The project</div><h2>On-chain. User-first.</h2><div class="grid"><article class="card"><div class="cardlabel">Network</div><div class="big">Polygon PoS</div><div class="tiny">Chain ID 137</div></article><article class="card"><div class="cardlabel">Transparency</div><div class="big">Explore on-chain</div><div class="tiny">Use the block explorer to inspect contract information and transactions.</div><div class="rowbtn"><a class="btn smallbtn" href="https://polygonscan.com/address/0x82dba663278ADF0c398c1795a31760c7a76CA932" target="_blank" rel="noopener">Open PolygonScan ↗</a></div></article><article class="card"><div class="cardlabel">Wallet support</div><div class="big">EVM wallets</div><div class="tiny">Injected browser wallets can connect here. WalletConnect QR/mobile-wallet support can be added as the next integration step.</div></article></div></section>
+</main><footer class="wrap footer"><span>© NAVAA · Community-built Web3 interface</span><span>Never share your recovery phrase.</span></footer>
+<script src="https://cdn.jsdelivr.net/npm/ethers@6.13.5/dist/ethers.umd.min.js"></script>
+<script>
+(() => {
+ const TOKEN="0x82dba663278ADF0c398c1795a31760c7a76CA932";
+ const CHAIN_ID="0x89";
+ const ABI=["function balanceOf(address) view returns (uint256)","function decimals() view returns (uint8)","function symbol() view returns (string)","function name() view returns (string)"];
+ let provider=null, account=null, contract=null, decimals=18, symbol="NAVAA";
+ const $=id=>document.getElementById(id);
+ const say=t=>{$("message").textContent=t};
+ const short=a=>a?a.slice(0,6)+"…"+a.slice(-4):"Not connected";
+ async function connect(){
+  if(!window.ethers){say("Wallet library could not load. Refresh and try again.");return}
+  if(!window.ethereum){say("No browser wallet detected. Open this site inside your wallet app browser, or use a browser with a compatible wallet.");return}
+  try{
+   const accounts=await window.ethereum.request({method:"eth_requestAccounts"});
+   if(!accounts||!accounts.length){say("Wallet connection was not approved.");return}
+   account=accounts[0];provider=new ethers.BrowserProvider(window.ethereum);contract=new ethers.Contract(TOKEN,ABI,provider);
+   $("walletAddress").textContent=account;$("refresh").disabled=false;
+   await checkNetwork(); await loadBalance(); say("Wallet connected. Balance loaded from the blockchain.");
+  }catch(e){say(e&&e.code===4001?"Connection request rejected in wallet.":(e.message||"Could not connect wallet."))}
+ }
+ async function checkNetwork(){
+  if(!window.ethereum)return;
+  const id=await window.ethereum.request({method:"eth_chainId"});
+  if(id===CHAIN_ID){$("networkStatus").textContent="Polygon Mainnet connected";$("network").textContent="Polygon PoS";return true}
+  $("networkStatus").textContent="Wrong network";$("network").textContent="Switch network";return false;
+ }
+ async function loadBalance(){
+  if(!account||!contract)return;
+  try{
+   const [raw,dec,sym]=await Promise.all([contract.balanceOf(account),contract.decimals().catch(()=>18),contract.symbol().catch(()=>"NAVAA")]);
+   decimals=Number(dec);symbol=sym;
+   $("balance").textContent=Number(ethers.formatUnits(raw,decimals)).toLocaleString(undefined,{maximumFractionDigits:6})+" "+symbol;
+   $("balanceHint").textContent="On-chain balance for "+short(account);
+  }catch(e){$("balance").textContent="Unavailable";$("balanceHint").textContent="Check that the token contract and network are correct.";say("Balance lookup failed. Ensure the wallet is on Polygon Mainnet.")}
+ }
+ async function switchNetwork(){
+  if(!window.ethereum){say("Open the site in a compatible wallet browser first.");return}
+  try{await window.ethereum.request({method:"wallet_switchEthereumChain",params:[{chainId:CHAIN_ID}]});await checkNetwork();if(account)await loadBalance();say("Network updated.")}
+  catch(e){if(e.code===4902)say("Add Polygon Mainnet in your wallet, then retry.");else say(e.code===4001?"Network switch was rejected.":(e.message||"Could not switch network."))}
+ }
+ $("connectTop").onclick=connect;$("connectHero").onclick=connect;$("switchNet").onclick=switchNetwork;
+ $("refresh").onclick=async()=>{await checkNetwork();await loadBalance()};
+ $("copyContract").onclick=async()=>{try{await navigator.clipboard.writeText(TOKEN);say("Contract address copied.")}catch(e){say("Copy this address: "+TOKEN)}};
+ $("disconnect").onclick=()=>{account=null;provider=null;contract=null;$("walletAddress").textContent="Not connected";$("balance").textContent="— NAVAA";$("balanceHint").textContent="Connect a wallet to read your balance from Polygon.";$("networkStatus").textContent="Wallet not connected";$("network").textContent="Polygon";$("refresh").disabled=true;say("Wallet display cleared. If needed, disconnect the dapp from your wallet settings too.")};
+ if(window.ethereum){
+  window.ethereum.on?.("accountsChanged",accounts=>{if(!accounts.length){$("disconnect").click()}else{account=accounts[0];$("walletAddress").textContent=account;provider=new ethers.BrowserProvider(window.ethereum);contract=new ethers.Contract(TOKEN,ABI,provider);loadBalance()}});
+  window.ethereum.on?.("chainChanged",()=>{checkNetwork().then(()=>loadBalance())});
+ }
+})();
+</script>
+</body></html>
