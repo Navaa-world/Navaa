@@ -203,7 +203,10 @@ async function ensurePolygon(){
  }
 }
 async function initRead(){
- provider=new ethers.JsonRpcProvider('https://polygon.drpc.org');
+// provider=new ethers.JsonRpcProvider('https://polygon.drpc.org');
+provider=new ethers.JsonRpcProvider('https://polygon-bor-rpc.publicnode.com');
+  
+  
  exRead=new ethers.Contract(EXCHANGE,EX_ABI,provider);
  tokenRead=new ethers.Contract(TOKEN,TOKEN_ABI,provider);
  stakingRead=new ethers.Contract(STAKING,STAKE_ABI,provider);
