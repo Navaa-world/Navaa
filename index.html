@@ -515,7 +515,9 @@ const $ = id => document.getElementById(id);
 const fmt = (v, digits=6) => { try { return Number(v).toLocaleString('en-US',{maximumFractionDigits:digits}); } catch { return '—'; } };
 const prettyError = e => { const s=e?.shortMessage||e?.reason||e?.info?.error?.message||e?.message||String(e); return s.replace('execution reverted: ',''); };
 function status(id,msg,kind='muted'){const el=$(id);el.className='status '+kind;el.textContent=msg;}
-function setNetwork(text){$('networkPill').textContent=text;}
+
+  // function setNetwork(text){$('networkPill').textContent=text;}       ----------MODIFICATION COMMENTS OFF----------
+  
 function amountToUnits(value, decimals=18){if(!value || !/^\d+(\.\d*)?$/.test(String(value).trim())) throw Error('Valid positive amount enter karein.');const n=ethers.parseUnits(String(value),decimals);if(n<=0n)throw Error('Amount zero se zyada hona chahiye.');return n;}
 function unitsToHuman(v,decimals=18){return ethers.formatUnits(v,decimals);}
 function deadline(){return BigInt(Math.floor(Date.now()/1000)+1200);}
@@ -550,7 +552,9 @@ async function refreshInfo(){
   if(tokenAddr.toLowerCase()!==TOKEN.toLowerCase())throw Error('Warning: Exchange ka configured NAVAA token address expected token se match nahi karta!');
   isOwner=!!account&&owner.toLowerCase()===account.toLowerCase();
   $('adminPanel').classList.toggle('hidden',!isOwner);
-  setNetwork(account?'Connected':'Polygon · read-only');
+   
+//  setNetwork(account?'Connected':'Polygon · read-only');  --modification---Comments off------------
+   
   await updateQuotes();
  }catch(e){status('tradeStatus','Contract read failed: '+prettyError(e),'bad');}
 }
