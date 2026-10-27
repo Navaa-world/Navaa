@@ -238,6 +238,21 @@
 .earn-label{display:block;color:var(--muted);font-size:13px;margin:12px 0 5px}
 #earnStatus{overflow-wrap:anywhere}
 @media(max-width:760px){.earn-grid{grid-template-columns:1fr}.earn-stats{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+
+  .wallet-action {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+
+.wallet-action .network-pill {
+  margin: 0;
+  font-size: 11px;
+  text-align: center;
+}
+
   
 </style>
 </head>
@@ -254,10 +269,20 @@
   <button class="nav-tab" id="pageExchangeTab" type="button">Exchange</button>
 </nav>
 
+  <div class="top-actions">
+  <div class="wallet-action">
+    <button id="connectBtn">Connect Wallet</button>
+    <div class="network-pill" id="networkPill">Polygon · read-only</div>
+  </div>
+</div>
+
+
+
+  <!--
   <div class="top-actions row">
     <span class="pill" id="networkPill">Polygon · read-only</span>
     <button class="btn" id="connectBtn">Connect wallet</button>
-  </div>
+  </div>. -->
 </header>
     <!--- Opening Tag modify ----->
     <div id="exchangePage" class="hidden">
