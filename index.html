@@ -79,61 +79,30 @@
   top: 0;
   z-index: 1000;
   display: grid;
- /* grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); */
-  grid-template-columns: 1fr auto 1fr; /*----testing----*/
+  grid-template-columns: 1fr auto 1fr;
   align-items: center;
-  /* gap: 8px; */
-  gap: 20px;  /*-------testing------*/
+  gap: 20px;
   width: 100%;
-  /* min-height: 68px; */
-  min-height: 76px;  /*----testing----*/
+  min-height: 76px;
   margin: 0 0 8px;
-  /* padding: 12px 16px; */
-  padding: 12px 28px; /*----testing-----*/
+  padding: 12px 28px;
   box-sizing: border-box;
   background: var(--bg);
   border-bottom: 1px solid var(--line);
-  /*-------Add design for testing---------*/
+
   -webkit-backdrop-filter: blur(18px);
   backdrop-filter: blur(18px);
 }
   
-/*
-.brand {
-  display: flex;
-  align-items: center;
-  justify-self: start;  /*------testing-------
- /* gap: 8px; 
-  min-width: 0;
-  /* white-space: nowrap;*/
-}
-  /*
-.logo {
-  width: 44px;
-  height: 44px;
-  flex-shrink: 0;
-  /*--------add modification---------
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 14px;
-  font-size: 25px;
-  font-weight: 900;
-  letter-spacing: -1px;
-  box-shadow: 0 0 22px rgba(0, 229, 160, 0.18);
-  user-select: none;
-}  */
-
+  /*----------------BRAND / LOGO -------*/
   
-  /* BRAND / LOGO ------------testing-------*/
-
 .brand {
   display: flex;
   align-items: center;
   justify-self: start;
   min-width: 0;
 }
-
+  
 .logo {
   display: flex;
   align-items: center;
@@ -151,45 +120,7 @@
   user-select: none;
 }
   
-  /*---------------------------------------*/
-
-  /*------original------
-  
-.main-nav {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 4px;
-  white-space: nowrap;
-}
-
-.nav-tab {
-  padding: 8px 13px;
-  border: 1px solid transparent;
-  border-radius: 9px;
-  background: transparent;
-  color: var(--muted);
-  font: inherit;
-  font-size: 16px;
-  font-weight: 700;
-  cursor: pointer;
-  white-space: nowrap;
-}
-
-.nav-tab:hover {
-  background: var(--panel2);
-  color: var(--text);
-}
-
-.nav-tab.active {
-  color: var(--text);
-  background: #302456;
-  border-color: var(--accent2);
-  width: 60px;  /*------------modify-----*/
-}
-  */
-
-  /* CENTER NAVIGATION ---------------Testing-----*/
+  /*------------ CENTER NAVIGATION ------*/
 
 .main-nav {
   display: flex;
@@ -247,26 +178,6 @@
   outline-offset: 3px;
 }
 
-
-  /*------------------------------------------------*/
-  /*
-.top-actions {
-  display: flex;
-  align-items: center;
-  justify-self: end;
-  justify-content: flex-end;
-  gap: 6px;
-  min-width: 0;
-  white-space: nowrap;
-}
-
-.top-actions .btn {
-  font-size: 16px;
-  padding: 10px 12px;
-  white-space: nowrap;
-}
-  */
-
   /* RIGHT-SIDE WALLET BUTTON --------testing--------*/
 
 .top-actions.row {
@@ -282,25 +193,18 @@
   align-items: center;
   justify-content: center;
   gap: 8px;
-
   min-height: 44px;
   padding: 0 20px;
-
   border: 1px solid rgba(0, 229, 160, 0.35);
   border-radius: 13px;
-
   background: linear-gradient(135deg, #00e5a0, #00c991);
   color: #071711;
-
   font: inherit;
   font-size: 13px;
   font-weight: 750;
   white-space: nowrap;
-
   cursor: pointer;
-
   box-shadow: 0 5px 20px rgba(0, 229, 160, 0.10);
-
   transition:
     transform 0.2s ease,
     box-shadow 0.2s ease,
@@ -316,9 +220,8 @@
 #connectBtn:active {
   transform: scale(0.98);
 }
-  /*-------------------------------------------*/
 
-  /* TABLET ------------testing--------+*/
+  /*-------Design for TABLET -----*/
 
 @media (max-width: 700px) {
   .top {
@@ -355,7 +258,7 @@
   }
 }
 
-/* SMALL MOBILE ---------------testing-------*/
+/* -------Design for SMALL MOBILE -------*/
 
 @media (max-width: 390px) {
   .top {
@@ -395,72 +298,6 @@
     transition: none;
   }
 }
-
- /*-------------------------------*/
-  
-
-
-  /*----------original off-------
-  
-@media (max-width: 760px) {
-  .top {
-    grid-template-columns: auto minmax(0, 1fr) auto;
-    gap: 5px;
-  }
-
-  .brand {
-    gap: 5px;
-  }
-
-  .logo {
-    width: 30px;
-    height: 30px;
-  }
-
-  .main-nav {
-    gap: 2px;
-  }
-
-  .nav-tab {
-    padding: 8px 9px;
-    font-size: 12px;
-  }
-
-  .top-actions {
-    gap: 4px;
-  }
-
-  .top-actions .btn {
-    font-size: 10px;
-    padding: 7px 6px;
-  }
-}
-
-@media (max-width: 420px) {
-  .top {
-    gap: 3px;
-  }
-
-  .logo {
-    width: 26px;
-    height: 26px;
-  }
-
-  .nav-tab {
-    padding: 7px 5px;
-    font-size: 11px;
-  }
-
-  .top-actions {
-    gap: 3px;
-  }
-  
-  .top-actions .btn {
-    font-size: 9px;
-    padding: 6px 4px;
-  }
-}
-/*--------------------------*/
 
 
 /* Earn / staking UI */
