@@ -411,6 +411,147 @@
     margin-top:16px;
   }
 
+  
+/* ===== NAVAA FUTURISTIC BOTTOM NAVIGATION ===== */
+
+#earnPage {
+  padding-bottom: 105px;
+  scroll-behavior: smooth;
+}
+
+#earnHomeSection,
+#earnStakeSection,
+#earnReferralSection {
+  scroll-margin-top: 95px;
+}
+
+/* Fixed glass navigation */
+.earn-bottom-nav {
+  position: fixed;
+  left: 50%;
+  bottom: max(14px, env(safe-area-inset-bottom));
+  transform: translateX(-50%);
+  z-index: 2000;
+
+  width: min(430px, calc(100% - 28px));
+  min-height: 76px;
+  padding: 8px 12px;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+  gap: 7px;
+
+  background: rgba(12, 22, 37, 0.78);
+  border: 1px solid rgba(0, 229, 160, 0.20);
+  border-radius: 23px;
+
+  -webkit-backdrop-filter: blur(22px);
+  backdrop-filter: blur(22px);
+
+  box-shadow:
+    0 8px 35px rgba(0, 0, 0, 0.42),
+    0 0 25px rgba(0, 229, 160, 0.07),
+    inset 0 1px 0 rgba(255, 255, 255, 0.07);
+}
+
+/* Individual navigation tab */
+.earn-nav-item {
+  position: relative;
+  min-width: 0;
+  min-height: 60px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+
+  border: 1px solid transparent;
+  border-radius: 16px;
+  background: transparent;
+
+  color: #8998ad;
+  font-family: inherit;
+  font-size: 11px;
+  font-weight: 650;
+  letter-spacing: 0.2px;
+
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+
+  transition:
+    color 0.25s ease,
+    background 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.earn-nav-item svg {
+  width: 22px;
+  height: 22px;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+
+  transition:
+    transform 0.25s ease,
+    filter 0.25s ease;
+}
+
+.earn-nav-item.active {
+  color: #00e5a0;
+  background: linear-gradient(
+    145deg,
+    rgba(0, 229, 160, 0.15),
+    rgba(0, 168, 255, 0.09)
+  );
+  border-color: rgba(0, 229, 160, 0.22);
+
+  box-shadow:
+    inset 0 0 18px rgba(0, 229, 160, 0.07),
+    0 0 17px rgba(0, 229, 160, 0.09);
+}
+
+.earn-nav-item.active svg {
+  transform: translateY(-2px);
+  filter: drop-shadow(0 0 7px rgba(0, 229, 160, 0.65));
+}
+
+.earn-nav-item:active {
+  transform: scale(0.94);
+}
+
+.earn-nav-item:focus-visible {
+  outline: 2px solid #00e5a0;
+  outline-offset: 3px;
+}
+
+/* Small active indicator */
+.earn-nav-item.active::after {
+  content: "";
+  position: absolute;
+  bottom: 3px;
+  width: 16px;
+  height: 2px;
+  border-radius: 10px;
+  background: #00e5a0;
+  box-shadow: 0 0 9px #00e5a0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .earn-nav-item,
+  .earn-nav-item svg {
+    transition: none;
+  }
+
+  #earnPage {
+    scroll-behavior: auto;
+  }
+}
 
   
 </style>
@@ -578,7 +719,8 @@
     
     <section id="earnPage">
   <div class="earn-wrap">
-    <section class="card">
+    <section class="card" id="earnHomeSection">
+   <!------- <section class="card"> -------testing for up off--->
       <div class="earn-head">
         <div><h2 style="font-size:22px;margin-bottom:4px;">NAVAA Earn</h2><div class="muted">Stake NAVAA, track rewards, and invite new stakers.</div></div>
         <span class="pill" id="stakeStatusPill">Connect wallet to begin</span>
@@ -591,8 +733,10 @@
         <div class="stat"><div class="muted small">Your referral rewards</div><div class="v" id="stakeReferralBalance">—</div><div class="earn-note">NAVAA</div></div>
       </div>
     </section>
+    
     <div class="earn-grid">
-      <section class="card">
+      <section class="card" id="earnStakeSection">
+     <!----- <section class="card">--------------up off ----->
         <h2>Stake NAVAA</h2>
         <label class="earn-label" for="stakeAmount">Amount to stake (NAVAA)</label>
         <input class="earn-input" id="stakeAmount" type="number" min="1000" step="any" placeholder="Minimum 1000 NAVAA">
@@ -605,9 +749,12 @@
         <hr class="sep">
         <h2>Your positions</h2>
         <div class="earn-note">Rewards shown are estimates from on-chain data and may update after refresh. Claiming rewards is subject to the contract's 30-day cooldown.</div>
-        <div id="stakePositions"><div class="muted">Connect wallet to view positions.</div></div>
+        <div id="stakePositions"><div class="muted">Connect wallet to view positions.</div>
+        </div>
       </section>
-      <section class="card">
+
+      <section class="card" id="earnReferralSection">
+     <!---------------- <section class="card">.  ------up off------------->
         <h2>Referral dashboard</h2>
         <div class="muted small">Share your wallet address as a referral link. Referral rewards apply only to the referred user's first stake.</div>
         <label class="earn-label" for="referralLink">Your referral link</label>
@@ -639,6 +786,52 @@
       <div class="status muted" id="stakeAdminStatus"></div>
     </section>
     <div class="foot">Staking contract is separate from the Exchange contract. Funding is done by transferring NAVAA directly to the staking contract address. This UI is not an audit or guarantee of contract safety.</div>
+
+      <!-- BOTTOM NAVIGATION START -->
+<nav class="earn-bottom-nav" aria-label="Earn navigation">
+
+  <button class="earn-nav-item active"
+          type="button"
+          data-earn-target="earnHomeSection">
+
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="m3 10 9-7 9 7"></path>
+      <path d="M5 9v11h14V9"></path>
+      <path d="M9 20v-7h6v7"></path>
+    </svg>
+
+    <span>Home</span>
+  </button>
+
+  <button class="earn-nav-item"
+          type="button"
+          data-earn-target="earnStakeSection">
+
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M12 2v20"></path>
+      <path d="M17 6H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+    </svg>
+
+    <span>Earn</span>
+  </button>
+
+  <button class="earn-nav-item"
+          type="button"
+          data-earn-target="earnReferralSection">
+
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <circle cx="9" cy="8" r="3"></circle>
+      <path d="M3 20v-1a6 6 0 0 1 12 0v1"></path>
+      <path d="M16 5a3 3 0 0 1 0 6"></path>
+      <path d="M18 14a5 5 0 0 1 3 4v2"></path>
+    </svg>
+
+    <span>Refer &amp; Earn</span>
+  </button>
+
+</nav>
+
+      
   </div>
 </section>
     
@@ -942,6 +1135,33 @@ async function copyReferral(){
  try{await navigator.clipboard.writeText(value);status('earnStatus','Referral link copied.','good');}
  catch{ $('referralLink').focus();$('referralLink').select();status('earnStatus','Link select kar diya hai; Copy manually karein.');}
 }
+
+  
+/* ===== NAVAA EARN BOTTOM NAVIGATION ===== */
+
+document.querySelectorAll('.earn-nav-item').forEach(button => {
+  button.addEventListener('click', () => {
+
+    const targetId = button.dataset.earnTarget;
+    const target = document.getElementById(targetId);
+
+    if (!target) return;
+
+    document.querySelectorAll('.earn-nav-item').forEach(item => {
+      item.classList.remove('active');
+    });
+
+    button.classList.add('active');
+
+    target.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start'
+    });
+
+  });
+});
+
+  
 
 // Modification Exchange and Earn Tab
   
