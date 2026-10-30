@@ -552,6 +552,15 @@
     scroll-behavior: auto;
   }
 }
+  /* ===== EARN SEPARATE PAGE NAVIGATION ===== */
+
+.earn-subpage {
+  display: none;
+}
+
+.earn-subpage.active {
+  display: block;
+}
 
   
 </style>
@@ -719,8 +728,7 @@
     
     <section id="earnPage">
   <div class="earn-wrap">
-    <section class="card" id="earnHomeSection">
-   <!------- <section class="card"> -------testing for up off--->
+    <section class="card earn-subpage active" id="earnHomeSection">
       <div class="earn-head">
         <div><h2 style="font-size:22px;margin-bottom:4px;">NAVAA Earn</h2><div class="muted">Stake NAVAA, track rewards, and invite new stakers.</div></div>
         <span class="pill" id="stakeStatusPill">Connect wallet to begin</span>
@@ -735,8 +743,7 @@
     </section>
     
     <div class="earn-grid">
-      <section class="card" id="earnStakeSection">
-     <!----- <section class="card">--------------up off ----->
+      <section class="card earn-subpage" id="earnStakeSection">
         <h2>Stake NAVAA</h2>
         <label class="earn-label" for="stakeAmount">Amount to stake (NAVAA)</label>
         <input class="earn-input" id="stakeAmount" type="number" min="1000" step="any" placeholder="Minimum 1000 NAVAA">
@@ -753,8 +760,7 @@
         </div>
       </section>
 
-      <section class="card" id="earnReferralSection">
-     <!---------------- <section class="card">.  ------up off------------->
+      <section class="card earn-subpage" id="earnReferralSection">
         <h2>Referral dashboard</h2>
         <div class="muted small">Share your wallet address as a referral link. Referral rewards apply only to the referred user's first stake.</div>
         <label class="earn-label" for="referralLink">Your referral link</label>
@@ -1136,26 +1142,36 @@ async function copyReferral(){
  catch{ $('referralLink').focus();$('referralLink').select();status('earnStatus','Link select kar diya hai; Copy manually karein.');}
 }
 
-  
-/* ===== NAVAA EARN BOTTOM NAVIGATION ===== */
+
+  /* ===== NAVAA EARN BOTTOM NAVIGATION ===== */
 
 document.querySelectorAll('.earn-nav-item').forEach(button => {
   button.addEventListener('click', () => {
 
     const targetId = button.dataset.earnTarget;
+
+    // Hide all Earn sections
+    document.querySelectorAll('.earn-subpage').forEach(section => {
+      section.classList.remove('active');
+    });
+
+    // Show selected section
     const target = document.getElementById(targetId);
+    if (target) {
+      target.classList.add('active');
+    }
 
-    if (!target) return;
-
+    // Update active navigation button
     document.querySelectorAll('.earn-nav-item').forEach(item => {
       item.classList.remove('active');
     });
 
     button.classList.add('active');
 
-    target.scrollIntoView({
-      behavior: 'smooth',
-      block: 'start'
+    // Start selected page from top
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
     });
 
   });
